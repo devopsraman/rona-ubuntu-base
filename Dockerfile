@@ -2,6 +2,8 @@ FROM ubuntu:14.04
 
 MAINTAINER Ronan Gill <ronan.gill@vodafone.com>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 ADD sources.list /etc/apt/sources.list
   
 RUN apt-get update
