@@ -16,7 +16,7 @@ ENV LANGUAGE en_GB.UTF-8
 ENV LC_ALL en_GB.UTF-8
 ENV HOME /root
 
-RUN apt-get -y install vim curl wget supervisor 
+RUN apt-get install -y software-properties-common python-software-properties vim curl wget supervisor 
 RUN mkdir -p /var/log/supervisor
 RUN mkdir -p /etc/supervisor/conf.d
 
