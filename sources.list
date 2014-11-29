@@ -1,33 +1,26 @@
-deb http://gb.archive.ubuntu.com/ubuntu/ trusty main restricted
-deb-src http://gb.archive.ubuntu.com/ubuntu/ trusty main restricted
+#############################################################
+################### OFFICIAL UBUNTU REPOS ###################
+#############################################################
 
-deb http://gb.archive.ubuntu.com/ubuntu/ trusty-updates main restricted
-deb-src http://gb.archive.ubuntu.com/ubuntu/ trusty-updates main restricted
+###### Ubuntu Main Repos
+deb http://uk.archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse 
+deb-src http://uk.archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse 
 
-deb http://gb.archive.ubuntu.com/ubuntu/ trusty universe
-deb-src http://gb.archive.ubuntu.com/ubuntu/ trusty universe
-deb http://gb.archive.ubuntu.com/ubuntu/ trusty-updates universe
-deb-src http://gb.archive.ubuntu.com/ubuntu/ trusty-updates universe
+###### Ubuntu Update Repos
+deb http://uk.archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse 
+deb http://uk.archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse 
+deb http://uk.archive.ubuntu.com/ubuntu/ trusty-proposed main restricted universe multiverse 
+deb http://uk.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse 
+deb-src http://uk.archive.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse 
+deb-src http://uk.archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse 
+deb-src http://uk.archive.ubuntu.com/ubuntu/ trusty-proposed main restricted universe multiverse 
+deb-src http://uk.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse 
 
-deb http://gb.archive.ubuntu.com/ubuntu/ trusty multiverse
-deb-src http://gb.archive.ubuntu.com/ubuntu/ trusty multiverse
-deb http://gb.archive.ubuntu.com/ubuntu/ trusty-updates multiverse
-deb-src http://gb.archive.ubuntu.com/ubuntu/ trusty-updates multiverse
-
-deb http://gb.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse
-deb-src http://gb.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse
-
-deb http://security.ubuntu.com/ubuntu trusty-security main restricted
-deb-src http://security.ubuntu.com/ubuntu trusty-security main restricted
-deb http://security.ubuntu.com/ubuntu trusty-security universe
-deb-src http://security.ubuntu.com/ubuntu trusty-security universe
-deb http://security.ubuntu.com/ubuntu trusty-security multiverse
-deb-src http://security.ubuntu.com/ubuntu trusty-security multiverse
-
+###### Ubuntu Partner Repo
 deb http://archive.canonical.com/ubuntu trusty partner
 deb-src http://archive.canonical.com/ubuntu trusty partner
 
+###### Ubuntu Extras Repo
 deb http://extras.ubuntu.com/ubuntu trusty main
 deb-src http://extras.ubuntu.com/ubuntu trusty main
-deb http://gb.archive.ubuntu.com/ubuntu/ trusty-proposed restricted multiverse main universe
 

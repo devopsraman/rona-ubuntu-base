@@ -12,5 +12,4 @@ else
     else
         echo "DIRECT"
     fi
-    echo "DIRECT"
 fi
