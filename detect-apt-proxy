@@ -10,6 +10,11 @@ else
     if [  $? -eq 0  ] ; then
         echo "http://${gateway}:3128"   
     else
-        echo "DIRECT"
+		nc -z ${gateway} 8000
+			if [  $? -eq 0  ] ; then
+				echo "http://${gateway}:8000"   
+			else
+				echo "DIRECT"
+			fi
     fi
 fi
