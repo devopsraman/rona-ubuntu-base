@@ -1,4 +1,4 @@
-FROM docker.gillsoft.org/ubuntu:15.04
+FROM ubuntu:15.10
 
 MAINTAINER Ronan Gill <ronan@gillsoft.org>
 
@@ -6,8 +6,9 @@ ADD 00proxy /etc/apt/apt.conf.d/00proxy
 ADD detect-apt-proxy /etc/apt/detect-apt-proxy
 
 RUN apt-get update && \
+    apt-get install -yq netcat iproute2 && \
     apt-get -yq dist-upgrade && \
-    apt-get install -yq vim-tiny curl wget software-properties-common git htop man unzip && \
+    apt-get install -yq netcat vim-tiny curl wget software-properties-common git htop man unzip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
