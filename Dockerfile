@@ -10,6 +10,7 @@ RUN apt-get update && \
     apt-get -yq dist-upgrade && \
     apt-get install -yq netcat vim-tiny curl wget software-properties-common git htop man unzip && \
     apt-get clean && \
+    rm /bin/sh && ln -s /bin/bash /bin/sh && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN echo Europe/London > /etc/timezone && \
@@ -19,6 +20,7 @@ RUN echo Europe/London > /etc/timezone && \
 ENV LANG en_GB.UTF-8
 ENV LANGUAGE $LANG
 ENV LC_ALL $LANG
+ENV DISTRIB_CODENAME wily
 
 RUN usermod -u 1034 www-data
 
