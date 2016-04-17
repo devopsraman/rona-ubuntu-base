@@ -2,10 +2,14 @@ FROM ubuntu:16.04
 
 MAINTAINER Ronan Gill <ronan@gillsoft.org>
 
+ENV DISTRIB_CODENAME xenial
+
 ADD 00proxy /etc/apt/apt.conf.d/00proxy
 ADD detect-apt-proxy /etc/apt/detect-apt-proxy
+ADD sources.list /etc/apt/sources.list
 
-RUN apt-get update && \
+RUN sed -i 's/##release##/'$DISTRIB_CODENAME'/' /etc/apt/sources.list && \
+	apt-get update && \
     apt-get install -yq netcat iproute2 && \
     apt-get -yq dist-upgrade && \
     apt-get install -yq netcat vim-tiny curl wget software-properties-common git htop man unzip && \
