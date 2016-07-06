@@ -4,8 +4,7 @@ MAINTAINER Ronan Gill <ronan@gillsoft.org>
 
 ENV DISTRIB_CODENAME xenial
 
-ADD 00proxy /etc/apt/apt.conf.d/00proxy
-ADD detect-apt-proxy /etc/apt/detect-apt-proxy
+
 ADD sources.list /etc/apt/sources.list
 
 RUN sed -i 's/##release##/'$DISTRIB_CODENAME'/' /etc/apt/sources.list && \
@@ -27,5 +26,8 @@ ENV LC_ALL $LANG
 ENV DISTRIB_CODENAME wily
 
 RUN usermod -u 1034 www-data
+
+ADD 00proxy /etc/apt/apt.conf.d/00proxy
+ADD detect-apt-proxy /etc/apt/detect-apt-proxy
 
 CMD /bin/bash

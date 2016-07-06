@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gateway="$(ip route list 0/0 | awk '{print $3}')"
+gateway="192.168.1.178"
 
 nc -z ${gateway} 3142
 if [  $? -eq 0  ] ; then
@@ -10,11 +10,12 @@ else
     if [  $? -eq 0  ] ; then
         echo "http://${gateway}:3128"   
     else
-		nc -z ${gateway} 8000
-			if [  $? -eq 0  ] ; then
-				echo "http://${gateway}:8000"   
-			else
-				echo "DIRECT"
-			fi
+                nc -z ${gateway} 8000
+                        if [  $? -eq 0  ] ; then
+                                echo "http://${gateway}:8000"   
+                        else
+                                echo "DIRECT"
+                        fi
     fi
 fi
+
