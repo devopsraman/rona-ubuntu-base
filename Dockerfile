@@ -1,8 +1,8 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.10
 
 MAINTAINER Ronan Gill <ronan@gillsoft.org>
 
-ENV DISTRIB_CODENAME xenial
+ENV DISTRIB_CODENAME yakkety
 
 ADD sources.list /etc/apt/sources.list
 
@@ -18,11 +18,10 @@ RUN sed -i 's/##release##/'$DISTRIB_CODENAME'/' /etc/apt/sources.list && \
 RUN echo Europe/London > /etc/timezone && \
     dpkg-reconfigure tzdata && \
     locale-gen en_GB.UTF-8
-    
+
 ENV LANG en_GB.UTF-8
 ENV LANGUAGE $LANG
 ENV LC_ALL $LANG
-ENV DISTRIB_CODENAME wily
 
 RUN usermod -u 1034 www-data
 
@@ -31,6 +30,6 @@ ADD detect-apt-proxy /etc/apt/detect-apt-proxy
 ADD aliases.sh /etc/profile.d/aliases.sh
 ADD functions.sh /etc/profile.d/functions.sh
 
-RUN chmod a+x /etc/profile.d/*.sh 
+RUN chmod a+x /etc/profile.d/*.sh
 
 CMD /bin/bash -l
