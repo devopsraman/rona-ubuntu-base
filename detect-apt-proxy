@@ -1,21 +1,20 @@
 #!/bin/bash
 
-gateway="192.168.1.178"
+gateway="192.168.1.219"
 
 nc -z ${gateway} 3142
 if [  $? -eq 0  ] ; then
-    echo "http://${gateway}:3142"   
+    echo "http://${gateway}:3142"
 else
     nc -z ${gateway} 3128
     if [  $? -eq 0  ] ; then
-        echo "http://${gateway}:3128"   
+        echo "http://${gateway}:3128"
     else
                 nc -z ${gateway} 8000
                         if [  $? -eq 0  ] ; then
-                                echo "http://${gateway}:8000"   
+                                echo "http://${gateway}:8000"
                         else
                                 echo "DIRECT"
                         fi
     fi
 fi
-
