@@ -1,19 +1,8 @@
-image: docker:latest
-
-services:
-  - docker:dind
-
-stages:
-- build
-
-variables:
-  CONTAINER_TEST_IMAGE: my-docker-hub/$CI_PROJECT_ID:$CI_BUILD_REF_NAME_test
-
-before_script:
-  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN my-docker-hub
-
-build:
-  stage: build
-  script:
-    - docker build --pull -t $CONTAINER_TEST_IMAGE .
-    - docker push $CONTAINER_TEST_IMAGE
+build_image:
+    image: docker:git
+    services:
+        - docker:dind
+    script:
+        - docker build -t docker.gillsoft.org/ubuntu-base .
+    only:
+        - master
