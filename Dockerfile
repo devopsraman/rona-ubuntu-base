@@ -10,6 +10,7 @@ RUN sed -i 's/##release##/'$DISTRIB_CODENAME'/' /etc/apt/sources.list && \
 	  apt-get update && \
     apt-get -yq dist-upgrade && \
     apt-get -yq install --no-install-recommends \
+          apt-utils \
           build-essential \
           curl \
           git \
