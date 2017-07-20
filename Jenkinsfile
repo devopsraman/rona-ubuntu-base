@@ -7,7 +7,7 @@ node {
     }
 
     stage('build'){
-      app = docker.build 'docker.gillsoft.org/ubuntu-base'
+      app = docker.build 'docker.gillsoft.org/ubuntu-base' '--no-cache=true --force-rm=true'
     }
 
     stage('publish') {
