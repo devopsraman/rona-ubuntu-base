@@ -2,10 +2,10 @@ node {
     def app
 
     stage('checkout'){
-      // git url: 'https://gitlab.gillsoft.org/docker/ubuntu-base.git', credentialsId: 'gitlab'
       checkout scm
     }
 
+    // need to find a way to inject this config
     stage('build'){
       app = docker.build('docker.gillsoft.org/ubuntu-base', '--no-cache=true --force-rm=true .')
     }
