@@ -1,17 +1,19 @@
-FROM ubuntu:17.04
+FROM ubuntu:17.10
 
 MAINTAINER Ronan Gill <ronan@gillsoft.org>
 
-ENV DISTRIB_CODENAME zesty
+ENV DISTRIB_CODENAME artful
 
-ADD sources.list /etc/apt/sources.list
+COPY sources.list /etc/apt/sources.list
 
 RUN sed -i 's/##release##/'$DISTRIB_CODENAME'/' /etc/apt/sources.list && \
 	  apt-get update && \
     apt-get -yq dist-upgrade && \
     apt-get -yq install --no-install-recommends \
+          apt-transport-https \
           apt-utils \
           build-essential \
+					ca-certificates \
           curl \
           git \
           locales \
