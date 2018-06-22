@@ -12,7 +12,7 @@ node {
 
     stage('publish') {
       docker.withRegistry('https://docker.gillsoft.org', 'docker-registry') {
-        app.push('latest')
+        app.push('18.04')
       }
     }
 }
